@@ -55,14 +55,6 @@ const TodoContainer = () => {
     return savedTodos || [];
   }
 
-  // useEffect(() => {
-  //   console.log('test run');
-  //   const temp = JSON.parse(localStorage.getItem('todos'));
-  //   if (temp) {
-  //     setTodos(temp);
-  //   }
-  // }, []);
-
   useEffect(() => {
     const temp = JSON.stringify(todos);
     localStorage.setItem('todos', temp);

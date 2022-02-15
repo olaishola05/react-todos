@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/netman5/react-todos/static/css/main.cc436760.css",
+    "main.js": "/netman5/react-todos/static/js/main.a3d15d40.js",
+    "static/js/787.e220566b.chunk.js": "/netman5/react-todos/static/js/787.e220566b.chunk.js",
+    "index.html": "/netman5/react-todos/index.html",
+    "main.cc436760.css.map": "/netman5/react-todos/static/css/main.cc436760.css.map",
+    "main.a3d15d40.js.map": "/netman5/react-todos/static/js/main.a3d15d40.js.map",
+    "787.e220566b.chunk.js.map": "/netman5/react-todos/static/js/787.e220566b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc436760.css",
+    "static/js/main.a3d15d40.js"
+  ]
+}

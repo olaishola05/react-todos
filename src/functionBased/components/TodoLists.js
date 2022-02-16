@@ -3,7 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TodoItem from './TodoItem';
 
-const TodosLists = ({ todos, handleChangeProps, deleteTodosProps, setUpdate }) => (
+const TodosLists = ({
+  todos, handleChangeProps, deleteTodosProps, setUpdate
+}) => (
   <ul>
     {todos.map((todo) => (
       <TodoItem

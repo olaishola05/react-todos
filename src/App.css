@@ -149,13 +149,13 @@ a {
 }
 
 .notmatch p {
-  margin-bottom: 2rem;
   line-height: 1em;
   text-align: center;
   color: #2b2b2b;
   width: 500px;
   margin: 0 auto;
   padding: 10px;
+  margin-bottom: 2rem;
 }
 
 .notfound {

@@ -1,14 +1,22 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable no-param-reassign */
 import React, { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Header from './Header';
 import InputTodo from './InputTodo';
 import TodosList from './TodoLists';
-import { v4 as uuidv4 } from 'uuid';
+
+function getInitialTodos() {
+  const storedTodos = localStorage.getItem('todos');
+  const savedTodos = JSON.parse(storedTodos);
+  return savedTodos || [];
+}
 
 const TodoContainer = () => {
   const [todos, setTodos] = useState(getInitialTodos());
 
   const handleChange = (id) => {
-    setTodos((prevState) =>
+    setTodos((prevState) => {
       prevState.map((todo) => {
         if (todo.id === id) {
           return {
@@ -17,22 +25,18 @@ const TodoContainer = () => {
           };
         }
         return todo;
-      })
-    );
+      });
+    });
   };
 
   const delTodo = (id) => {
-    setTodos([
-      ...todos.filter((todo) => {
-        return todo.id !== id;
-      }),
-    ]);
+    setTodos([...todos.filter((todo) => todo.id !== id)]);
   };
 
   const addTodoItem = (title) => {
     const newTodo = {
       id: uuidv4(),
-      title: title,
+      title,
       completed: false,
     };
     setTodos([...todos, newTodo]);
@@ -48,12 +52,6 @@ const TodoContainer = () => {
       })
     );
   };
-
-  function getInitialTodos() {
-    const storedTodos = localStorage.getItem('todos');
-    const savedTodos = JSON.parse(storedTodos);
-    return savedTodos || [];
-  }
 
   useEffect(() => {
     const temp = JSON.stringify(todos);

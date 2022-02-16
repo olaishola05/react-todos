@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import styles from './TodoItem.module.css';
 import { FaTrash } from 'react-icons/fa';
+import PropTypes from 'prop-types';
+import styles from './TodoItem.module.css';
 
-export const TodoItem = (props) => {
+const TodoItem = ({ todo, handleChangeProps, deleteTodosProps, setUpdate }) => {
   const [editing, setEditing] = useState(false);
 
-  useEffect(() => {
-    return () => {
-      console.log('Cleaning up...');
-    };
-  }, []);
+  useEffect(() => () => 'Cleaning up...', []);
 
   const handleEditing = () => {
     setEditing(true);
@@ -28,9 +25,9 @@ export const TodoItem = (props) => {
     textDecoration: 'line-through',
   };
 
-  const { completed, id, title } = props.todo;
-  let viewMode = {};
-  let editMode = {};
+  const { completed, id, title } = todo;
+  const viewMode = {};
+  const editMode = {};
 
   if (editing) {
     viewMode.display = 'none';
@@ -44,19 +41,15 @@ export const TodoItem = (props) => {
         <input
           type="checkbox"
           checked={completed}
-          onChange={() => props.handleChangeProps(id)}
+          onChange={() => handleChangeProps(id)}
           className={styles.checkbox}
         />
 
-        <button onClick={() => props.deleteTodosProps(id)}>
-          <FaTrash
-            style={{ color: 'orangered', fontSize: '16px' }}
-          />
+        <button type="button" onClick={() => deleteTodosProps(id)}>
+          <FaTrash style={{ color: 'orangered', fontSize: '16px' }} />
         </button>
 
-        <span style={completed ? completedStyle : null}>
-          {title}
-        </span>
+        <span style={completed ? completedStyle : null}>{title}</span>
       </div>
 
       <input
@@ -65,11 +58,22 @@ export const TodoItem = (props) => {
         className={styles.textInput}
         value={title}
         onChange={(e) => {
-          props.setUpdate(e.target.value, id);
+          setUpdate(e.target.value, id);
         }}
         onKeyDown={handleUpdatedDone}
       />
     </li>
   );
+};
+
+TodoItem.propTypes = {
+  todo: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    completed: PropTypes.bool.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
+  handleChangeProps: PropTypes.func.isRequired,
+  setUpdate: PropTypes.func.isRequired,
+  deleteTodosProps: PropTypes.func.isRequired,
 };
 export default TodoItem;

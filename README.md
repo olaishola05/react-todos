@@ -2,9 +2,11 @@
 
 # Math Magician
 
-> A calculator built using react for performing simple mathematical problem.
+> A todo web application for managing of daily todos, built using JavaScript Frontend Library React and React Router Dom API.
 
-![calculator](./images/calculator.png)
+![Home](./public/apphome.png)
+![nav](./public/navbar.png)
+![about](./public/about.png)
 
 ## Built With
 
@@ -20,10 +22,10 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-clone repo: `git clone https://github.com/netman5/react-calculator.git`
+clone repo: `git clone https://github.com/netman5/react-todos.git`
 
 then
-`cd calculator`
+`cd react-todos`
 
 ### Install
 

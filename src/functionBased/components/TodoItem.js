@@ -3,7 +3,9 @@ import { FaTrash } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import styles from './TodoItem.module.css';
 
-const TodoItem = ({ todo, handleChangeProps, deleteTodosProps, setUpdate }) => {
+const TodoItem = ({
+  todo, handleChangeProps, deleteTodosProps, setUpdate,
+}) => {
   const [editing, setEditing] = useState(false);
 
   useEffect(() => () => 'Cleaning up...', []);

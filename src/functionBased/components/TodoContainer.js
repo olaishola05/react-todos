@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Header from './Header';
@@ -13,20 +12,6 @@ function getInitialTodos() {
 
 const TodoContainer = () => {
   const [todos, setTodos] = useState(getInitialTodos());
-
-  // const handleChange = (id) => {
-  //   setTodos((prevState) => {
-  //     prevState.map((todo) => {
-  //       if (todo.id === id) {
-  //         return {
-  //           ...todo,
-  //           completed: !todo.completed,
-  //         };
-  //       }
-  //       return todo;
-  //     });
-  //   });
-  // };
 
   const handleChange = (id) => {
     setTodos((prevState) => prevState.map((todo) => {
@@ -54,7 +39,7 @@ const TodoContainer = () => {
     setTodos(
       todos.map((todo) => {
         if (todo.id === id) {
-          todo.title = updatedTitle;
+          return { ...todo, title: updatedTitle };
         }
         return todo;
       }),

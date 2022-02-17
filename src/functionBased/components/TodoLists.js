@@ -1,10 +1,9 @@
-/* eslint-disable comma-dangle */
 import React from 'react';
 import PropTypes from 'prop-types';
 import TodoItem from './TodoItem';
 
 const TodosLists = ({
-  todos, handleChangeProps, deleteTodosProps, setUpdate
+  todos, handleChangeProps, deleteTodosProps, setUpdate,
 }) => (
   <ul>
     {todos.map((todo) => (
@@ -25,7 +24,7 @@ TodosLists.propTypes = {
       id: PropTypes.string.isRequired,
       completed: PropTypes.bool.isRequired,
       title: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
   handleChangeProps: PropTypes.func.isRequired,
   setUpdate: PropTypes.func.isRequired,

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-closing-bracket-location */
 import React from 'react';
 
 function Header() {
@@ -17,7 +16,8 @@ function Header() {
           color: '#ececec',
           textTransform: 'lowercase',
           textAlign: 'center',
-        }}>
+        }}
+      >
         Todos
       </h1>
     </header>

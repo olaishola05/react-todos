@@ -14,7 +14,7 @@
 - Sass
 - Git
 
-## Live Demo (if available)
+## Live Demo [here](https://netman5.github.io/react-todos/)
 
 ## Getting Started
 
